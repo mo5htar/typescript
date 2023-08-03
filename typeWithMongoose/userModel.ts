@@ -58,3 +58,4 @@ userSchema.methods.comparedPassword = async function (
 type userModel = Model<UserDocument, {}, UserMethod>;
 
 const User = model<UserDocument, userModel>("User", userSchema);
+export default User;
