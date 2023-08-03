@@ -40,3 +40,22 @@ const myCanvas = <HTMLCanvasElement>document.getElementById("main_canvas");
 
 //type of
 let ans: String = typeof Myname === "string" ? "yes" : "no";
+
+// Utility Types
+type A = Awaited<Promise<string>>;
+
+interface Todo {
+  title: string;
+  description: string;
+}
+
+function updateTodo(todo: Todo, fieldsToUpdate: Partial<Todo>) {
+  return { ...todo, ...fieldsToUpdate };
+}
+
+interface Props {
+  a?: number;
+  b?: string;
+}
+
+const obj: Props = { a: 5 };
