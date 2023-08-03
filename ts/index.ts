@@ -42,20 +42,29 @@ const myCanvas = <HTMLCanvasElement>document.getElementById("main_canvas");
 let ans: String = typeof Myname === "string" ? "yes" : "no";
 
 // Utility Types
+
+//Awaited
 type A = Awaited<Promise<string>>;
 
+//partial
 interface Todo {
   title: string;
   description: string;
 }
-
 function updateTodo(todo: Todo, fieldsToUpdate: Partial<Todo>) {
   return { ...todo, ...fieldsToUpdate };
 }
 
-interface Props {
-  a?: number;
-  b?: string;
+//pick
+interface Todo {
+  title: string;
+  description: string;
+  completed: boolean;
 }
 
-const obj: Props = { a: 5 };
+type TodoPreview = Pick<Todo, "title" | "completed">;
+
+const todo: TodoPreview = {
+  title: "Clean room",
+  completed: false,
+};
